@@ -77,6 +77,19 @@
 
         ctx.drawImage(cursor, 0, 0, 280, 400, 15, 15, 17.5, 25);
 
+	// Show bounds of cursor
+	ctx.setLineDash([6])
+	ctx.rect(0, 0, 128, 128);
+	ctx.stroke();
+
+	
+	// show hotspot
+	ctx.beginPath();
+        ctx.arc(128, 128, 10, 0, 2 * Math.PI, false);
+        ctx.fillStyle = 'green';
+	ctx.fill();
+	ctx.fillText("Actual hotspot", 50, 120);
+
         ctx.restore()
 
         var url = canvas.toDataURL()
